@@ -67,6 +67,11 @@ function createMovieElement(movies) {
     const vierteH = document.createElement("h1");
     const funfteH = document.createElement("h1");
     const sechsteH = document.createElement("h1");
+    ersteDiv.style.backgroundColor = "#d6e284";
+    ersteDiv.style.width = "50%";
+    ersteDiv.style.height = "50%";
+    ersteDiv.style.borderRadius = "10px";
+    ersteDiv.style.padding = "10px";
 
     ersteH.textContent += "Title: " + movie[0];
 

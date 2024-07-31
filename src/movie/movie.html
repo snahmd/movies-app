@@ -3,37 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Movie</title>
   </head>
   <body>
     <section style="padding: 32px">
-      <h1>Movies for You</h1>
-      <h2>The best MovieDB</h2>
-      <form action="#" style="padding: 12px">
+      <h1 class="text-[32px] font-bold text-center">Movies for You</h1>
+      <h2 class="text-center pb-4">The best MovieDB</h2>
+      <form class="text-center" action="#" style="padding: 12px">
         <input
+          class="border border-black rounded-lg p-1"
           type="text"
           id="movie"
           name="movie"
           placeholder="Enter a movie name"
         />
-        <button id="moviesubmit" type="submit" style="border: 1px solid red">
+        <button
+          class="bg-[#fe602a] p-1 rounded-lg text-white"
+          id="moviesubmit"
+          type="submit"
+          style="border: 1px solid red"
+        >
           Submit
         </button>
       </form>
-      <div>
-        <button id="yearup" type="submit" style="border: 1px solid red">
+      <div class="flex justify-center gap-4">
+        <button
+          class="p-1 border border-[#fe602a] rounded-2xl"
+          id="yearup"
+          type="submit"
+        >
           Year Up
         </button>
-        <button id="yeardown" type="submit" style="border: 1px solid red">
+        <button
+          class="p-1 border border-[#fe602a] rounded-2xl"
+          id="yeardown"
+          type="submit"
+          style="border: 1px solid red"
+        >
           Year Down
         </button>
-        <button id="bestrate" type="submit" style="border: 1px solid red">
+        <button
+          class="p-1 border border-[#fe602a] rounded-2xl"
+          id="bestrate"
+          type="submit"
+          style="border: 1px solid #fe602a"
+        >
           Best Rate
         </button>
       </div>
     </section>
-    <div id="container" style="border: 1px solid red">
-      <div id="movieContainer" style="border: 5px solid yellow"></div>
+    <div class="p-4" id="container" style="border: 1px solid red">
+      <div
+        class="flex flex-wrap justify-center gap-4 p-2"
+        id="movieContainer"
+        style="border: 5px solid #fe602a"
+      ></div>
     </div>
     <script type="module" src="/src/movie/movie.ts"></script>
   </body>
