@@ -6,7 +6,24 @@
     <title>Movie</title>
   </head>
   <body>
-    <h1>Movies</h1>
+    <section style="padding: 32px">
+      <h1>Movies for You</h1>
+      <h2>The best MovieDB</h2>
+      <form action="get" style="padding: 12px">
+        <input
+          type="text"
+          id="movie"
+          name="movie"
+          placeholder="Enter a movie name"
+        />
+        <button type="submit" style="border: 1px solid red">Submit</button>
+      </form>
+      <div>
+        <button type="submit" style="border: 1px solid red">Year Up</button>
+        <button type="submit" style="border: 1px solid red">Year Down</button>
+        <button type="submit" style="border: 1px solid red">Best Rate</button>
+      </div>
+    </section>
     <div id="container" style="border: 1px solid red">
       <div id="movieContainer" style="border: 5px solid yellow"></div>
     </div>
