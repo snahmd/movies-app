@@ -1,11 +1,9 @@
 import { movies } from "./data";
 
 console.log("Movie", movies);
-console.log("hvbcjeh");
 
 // const movie = movies[0];
 
-const container = document.getElementById("container");
 const movieContainer = document.getElementById("movieContainer");
 
 // container.innerHTML = `
@@ -18,37 +16,32 @@ const movieContainer = document.getElementById("movieContainer");
 // `;
 
 // sort movies
-const sortYearUp = document
-  .getElementById("yearup")
-  .addEventListener("click", function () {
-    movies.sort((a, b) => {
-      return Number(a[1]) - Number(b[1]);
-    });
-    createMovieElement(movies);
+document.getElementById("yearup")?.addEventListener("click", function () {
+  movies.sort((a, b) => {
+    return Number(a[1]) - Number(b[1]);
   });
+  createMovieElement(movies);
+});
 
-const sortYearDown = document
-  .getElementById("yeardown")
-  .addEventListener("click", function () {
-    movies.sort((a, b) => {
-      return Number(b[1]) - Number(a[1]);
-    });
-    createMovieElement(movies);
+document.getElementById("yeardown")?.addEventListener("click", function () {
+  movies.sort((a, b) => {
+    return Number(b[1]) - Number(a[1]);
   });
+  createMovieElement(movies);
+});
 
-const sortBewertung = document
-  .getElementById("bestrate")
-  .addEventListener("click", function () {
-    movies.sort((a, b) => {
-      return Number(b[5]) - Number(a[5]);
-    });
-    createMovieElement(movies);
+document.getElementById("bestrate")?.addEventListener("click", function () {
+  movies.sort((a, b) => {
+    return Number(b[5]) - Number(a[5]);
   });
+  createMovieElement(movies);
+});
 
 //Filter movies
-document.getElementById("moviesubmit").addEventListener("click", function (e) {
+document.getElementById("moviesubmit")?.addEventListener("click", function (e) {
   e.preventDefault();
-  const value = document.getElementById("movie").value;
+  const elementHtml = document.getElementById("movie") as HTMLInputElement;
+  const value = elementHtml?.value || "";
   console.log(value);
   const filteredMovies = movies.filter((movie) => {
     return movie[0].toLowerCase().includes(value.toLowerCase());
@@ -56,7 +49,12 @@ document.getElementById("moviesubmit").addEventListener("click", function (e) {
   createMovieElement(filteredMovies);
 });
 
-function createMovieElement(movies) {
+function createMovieElement(
+  movies: [string, string, string, string, string[], string][]
+) {
+  if (!movieContainer) {
+    return;
+  }
   movieContainer.innerHTML = "";
   for (let i = 0; i < movies.length; i++) {
     const movie = movies[i];
