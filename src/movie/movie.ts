@@ -27,6 +27,24 @@ const sortYearUp = document
     createMovieElement(movies);
   });
 
+const sortYearDown = document
+  .getElementById("yeardown")
+  .addEventListener("click", function () {
+    movies.sort((a, b) => {
+      return Number(b[1]) - Number(a[1]);
+    });
+    createMovieElement(movies);
+  });
+
+const sortBewertung = document
+  .getElementById("bestrate")
+  .addEventListener("click", function () {
+    movies.sort((a, b) => {
+      return Number(b[5]) - Number(a[5]);
+    });
+    createMovieElement(movies);
+  });
+
 function createMovieElement(movies) {
   movieContainer.innerHTML = "";
   for (let i = 0; i < movies.length; i++) {
