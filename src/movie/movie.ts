@@ -45,6 +45,17 @@ const sortBewertung = document
     createMovieElement(movies);
   });
 
+//Filter movies
+document.getElementById("moviesubmit").addEventListener("click", function (e) {
+  e.preventDefault();
+  const value = document.getElementById("movie").value;
+  console.log(value);
+  const filteredMovies = movies.filter((movie) => {
+    return movie[0].toLowerCase().includes(value.toLowerCase());
+  });
+  createMovieElement(filteredMovies);
+});
+
 function createMovieElement(movies) {
   movieContainer.innerHTML = "";
   for (let i = 0; i < movies.length; i++) {
